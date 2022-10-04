@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center text-7xl pt-8">Hello World Updated</h1>
+  <h1 class="text-center text-7xl pt-8">Hello World Update 2</h1>
 </template>
 
 <script>
