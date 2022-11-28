@@ -22,6 +22,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/axios',
+    '~/plugins/tasks',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -40,6 +42,63 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: false,
+      callback: '/login',
+      home: false //login page redirects manually
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: process.env.API_URL + 'users/login',
+            method: 'post',
+            propertyName: "auth.accessToken"
+          },
+          forgotPassword: {
+            url: process.env.API_URL + 'users/forgot',
+            method: 'post',
+          },
+          resetPassword: {
+            url: process.env.API_URL + 'users/reset',
+            method: 'post',
+          },
+          userInfo: { 
+            url: process.env.API_URL + 'users', 
+            method: 'get'
+          },
+          businessInfo: { 
+            url: process.env.API_URL + 'business', 
+            method: 'get'
+          },
+          taskInfo: {
+            url: process.env.API_URL + 'tasks',
+          },
+          announcementInfo: {
+            url: process.env.API_URL + 'announcements',
+          },
+          commentInfo: {
+            url: process.env.API_URL + 'comments',
+          },
+          portalInfo: { 
+            url: process.env.API_URL + 'business/portal', 
+            method: 'post'
+          },
+          invoiceInfo: { 
+            url: process.env.API_URL + 'business/bills', 
+            method: 'get'
+          },
+          logout: false,
+          user: false
+        },
+        // tokenRequired: false,
+        // tokenType: false
+      }
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
