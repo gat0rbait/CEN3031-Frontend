@@ -1,46 +1,47 @@
 <template>
-    <div class="flex flex-col items-center bg-gray-200 w-72 h-screen py-8 px-4" @drop="onDrop($event, status)" @dragenter.prevent, @dragover.prevent>
+    <div v-if="renderComponent" class="flex flex-col items-center bg-gray-200 w-72 h-screen py-8 px-4" @drop="onDrop($event, status)" @dragenter.prevent, @dragover.prevent>
         <h3 class="self-start">{{name}}</h3>
         <div class="bg-gray-100 mt-4 flex flex-col gap-4 px-4 py-4 rounded-lg">
             <div v-for="task in getList(status)" :key="task.id">
                 <TaskCard :task="task"></TaskCard>
             </div>
-            <button class="bg-white px-2 py-2 rounded w-60" @click="showModal = true">Add Task</button>
+            <button class="bg-white px-2 py-2 rounded w-60" @click="showAdd = true">Add Task</button>
+            <AddTaskModal :status="status" draggable = false v-show="showAdd" @close-modal="showAdd = false"></AddTaskModal>
         </div>
     </div>
 </template>
 
 <script>
-import { setgroups } from 'process';
 import TaskCard from './TaskCard.vue';
+import AddTaskModal from './AddTaskModal.vue'
 
 
 export default {
+    data() {
+        return {
+            renderComponent: true,
+            showAdd: false
+        }
+    },
     props: {
         name: String,
         status: String,
         tasks: []
     },
-    setup(props) {
-        const onDrop = (event, list) => {
+    methods: {
+    
+        async onDrop(event, list) {
             const itemID = event.dataTransfer.getData("itemID");
-            const item = props.tasks.find((item) => item.id == itemID);
+            const item = this.$props.tasks.find((item) => item.id == itemID);
             //UpdateTask() to change status
-            item.status = list;
-        };
-        const getList = (list) => {
-            return props.tasks.filter((item) => item.status == list);
-        }
-        const onAdd = (add) => {
-            
-        }
-
-        return {
-            getList,
-            onDrop,
-            onAdd
+            await this.$changeTaskStatus(item.id, list);
+            this.$emit("refresh-tasks")
+        },
+        getList(list){
+            return this.$props.tasks?.filter((item) => item.status == list);
         }
     },
-    components: { TaskCard }
+    
+    components: { TaskCard, AddTaskModal }
 }
 </script>

@@ -2,15 +2,28 @@
     <div class="modal-overlay">
         <div class="modal">
             <p>{{task.name}}</p>
+            <p>{{task.reporter}}</p>
+            <p>Priority: {{task.priority}}</p>
+            <p>{{task.body}}</p>
+            <p>Comments: </p>
+            <input type="text" placeholder="Add Comment">
+            <button @click="deleteTask">Delete Task</button>
             <button @click="$emit('close-modal')">Close</button>
         </div>
     </div>
 </template>
   
 <script>
+import { METHODS } from 'http';
+
     export default {
         props: {
             task: Object
+        },
+        methods: {
+            deleteTask() {
+                console.log("Delete")
+            }
         }
     }
 </script>

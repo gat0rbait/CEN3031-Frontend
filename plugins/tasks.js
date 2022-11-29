@@ -145,7 +145,7 @@ export default ({ store, app }, inject) => {
 
     }
 
-    const createTask = async function (name, body, priority, user, subscribers) {
+    const createTask = async function (name, body, priority, user, status) {
 
         let url = this.$auth.strategies.local.options.endpoints.taskInfo.url
         
@@ -155,9 +155,8 @@ export default ({ store, app }, inject) => {
                 name,
                 body,
                 reporter: user,
-                status: "OPEN",
-                priority,
-                subscribers
+                status: status,
+                priority
             }, {
                 headers: {
                 // 'authorization': `${localStorage.getItem("auth._token.local")}`
