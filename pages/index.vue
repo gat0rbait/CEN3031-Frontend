@@ -1,5 +1,10 @@
 <template>
+<div>
   <h1 class="text-center text-7xl pt-8">Kandu</h1>
+  <div>
+    {{tasks}}
+  </div>
+</div>
 </template>
 
 <script>
