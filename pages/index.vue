@@ -32,9 +32,9 @@
       <AddResourceModal v-show="showResourceModal" @close-modal="showResourceModal = false"></AddResourceModal>
     </div>
     <div class="pattern flex w-full">
-      <Swimlane @refresh-tasks="handleRefresh(openkey)" :key="openkey" class="w-full" name="Backlog" status="OPEN" :tasks="tasks.Items"></Swimlane>
-      <Swimlane @refresh-tasks="handleRefresh(inprogkey)" :key="inprogkey" class="w-full" name="In Progress" status="IN_PROGRESS" :tasks="tasks.Items"></Swimlane>
-      <Swimlane @refresh-tasks="handleRefresh(completekey)" :key="completekey" class="w-full" name="Done" status="CLOSED" :tasks="tasks.Items"></Swimlane>
+      <Swimlane @refresh-tasks="handleRefresh(openkey)" :comments="comments" :key="openkey" class="w-full" name="Backlog" status="OPEN" :tasks="tasks.Items"></Swimlane>
+      <Swimlane @refresh-tasks="handleRefresh(inprogkey)" :comments="comments" :key="inprogkey" class="w-full" name="In Progress" status="IN_PROGRESS" :tasks="tasks.Items"></Swimlane>
+      <Swimlane @refresh-tasks="handleRefresh(completekey)" :comments="comments" :key="completekey" class="w-full" name="Done" status="CLOSED" :tasks="tasks.Items"></Swimlane>
     </div>
     
   </div>
@@ -66,6 +66,7 @@ export default {
             inprogkey: 1000,
             completekey: 5000,
             tasks: -1,
+            comments: -1,
             resources: [
               {
                 url: "https://testurl2.com",
@@ -113,6 +114,7 @@ export default {
     },
     async mounted() {
         this.tasks = await this.$getTasks()
+        this.comments = await this.$getComments()
     },
 
 

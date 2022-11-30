@@ -40,7 +40,8 @@
 
     export default {
         props: {
-            task: Object
+            task: Object,
+            comments: []
         },
         methods: {
             deleteTask() {

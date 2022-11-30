@@ -15,7 +15,7 @@
                 </button>
             </div>
         </div>
-        <ViewTaskModal :task="task" draggable = false v-show="showTask" @close-modal="showTask = false"></ViewTaskModal>
+        <ViewTaskModal :comments="comments" :task="task" draggable = false v-show="showTask" @close-modal="showTask = false"></ViewTaskModal>
     </div>
 </template>
 <style>
@@ -28,12 +28,14 @@
     export default{
         data() {
             return {
-                showTask:false
+                showTask:false,
+                
             }
         },
 
         props: {
-            task: Object
+            task: Object,
+            comments: []
         },
         
         setup() {

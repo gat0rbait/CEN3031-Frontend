@@ -3,7 +3,7 @@
         <h3 class="text-xl font-bold text-blue-900">{{name}}</h3>
         <div class="bg-blue-300 mt-4 flex flex-col gap-4 px-4 py-4 rounded-lg">
             <div v-for="task in getList(status)" :key="task.id">
-                <TaskCard :task="task"></TaskCard>
+                <TaskCard :comments="comments" :task="task"></TaskCard>
             </div>
             <button class="bg-white px-2 py-2 rounded w-60" @click="showAdd = true">Add Task</button>
             <AddTaskModal :status="status" draggable = false v-show="showAdd" @close-modal="showAdd = false"></AddTaskModal>
@@ -26,7 +26,8 @@ export default {
     props: {
         name: String,
         status: String,
-        tasks: []
+        tasks: [],
+        comments: []
     },
     methods: {
     
