@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="Kanban Logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.94237256"
+     inkscape:cx="291.28607"
+     inkscape:cy="489.72139"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="22.510422"
+       y="174.08059"
+       width="132.06114"
+       height="154.57156"
+       id="rect4325" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g9626">
+      <text
+         xml:space="preserve"
+         transform="matrix(2.8821656,0,0,3.2874224,-44.250619,-479.86512)"
+         id="text4323"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Futura Hv BT';-inkscape-font-specification:'Futura Hv BT, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;word-spacing:0px;white-space:pre;shape-inside:url(#rect4325);fill:#5599ff"><tspan
+           x="22.509766"
+           y="188.23633"
+           id="tspan9638">Kandu</tspan></text>
+      <ellipse
+         style="fill:#5599ff;stroke:none;stroke-width:1.07225;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+         id="path9342"
+         cx="141.03304"
+         cy="107.78413"
+         rx="3.5523269"
+         ry="3.690032" />
+      <ellipse
+         style="fill:#5599ff;stroke:none;stroke-width:1.07225;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+         id="ellipse9620"
+         cx="157.03653"
+         cy="107.78413"
+         rx="3.5523269"
+         ry="3.690032" />
+    </g>
+  </g>
+</svg>
