@@ -145,6 +145,27 @@ export default ({ store, app }, inject) => {
 
     }
 
+    const deleteTask = async function (taskid) {
+
+        let url = this.$auth.strategies.local.options.endpoints.taskInfo.url + '/' + taskid
+
+        let response;
+        try {
+        response = await axios.delete(url, {
+            headers: {
+            // 'authorization': `${localStorage.getItem("auth._token.local")}`
+            },
+        })
+        } catch (e) {
+        //expired or invalid token, handle error here
+        return false
+        }        
+        if (response.status != 200) return false
+
+        return response;
+
+    }
+
     const createTask = async function (name, body, priority, user, status) {
 
         let url = this.$auth.strategies.local.options.endpoints.taskInfo.url
@@ -199,6 +220,7 @@ export default ({ store, app }, inject) => {
 
     inject('getTasks', getTasks)
     inject('getTask', getTask)
+    inject('deleteTask', deleteTask)
     inject('createTask', createTask)
     inject('changeTaskStatus', changeTaskStatus)
 }
