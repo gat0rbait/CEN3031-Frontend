@@ -114,7 +114,6 @@ export default {
     },
     async mounted() {
         this.tasks = await this.$getTasks()
-        // this.comments = await this.$getComments()
     },
 
 

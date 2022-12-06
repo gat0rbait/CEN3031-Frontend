@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import axios from 'axios';
-// import store from 'vuex';
-// import { actions as timeout } from '~/store/timeout'
+
 
 export default function ({
   redirect,

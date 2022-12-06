@@ -18,9 +18,6 @@
         <ViewTaskModal :comments="comments" :task="task" draggable = false v-show="showTask" @close-modal="showTask = false"></ViewTaskModal>
     </div>
 </template>
-<style>
-    
-</style>
 
 <script>
     import ViewTaskModal from '~/components/ViewTaskModal.vue';
