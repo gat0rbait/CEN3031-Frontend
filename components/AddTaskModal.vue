@@ -51,6 +51,7 @@
             handleAddTask() {
                 this.$createTask(this.taskName, this.body, this.priority, "Kandu", this.$props.status);
                 this.$emit('close-modal');
+                this.$emit('refresh-tasks')
             }
         }
             
