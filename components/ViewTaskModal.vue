@@ -45,7 +45,9 @@
         },
         methods: {
             deleteTask() {
-                console.log("Delete")
+                this.$deleteTask(this.task.id)
+                this.$emit('close-modal');
+                this.$emit('refresh-tasks');
             }
         }
     }
